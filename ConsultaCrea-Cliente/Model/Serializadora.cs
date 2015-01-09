@@ -11,7 +11,7 @@ namespace ConsultaCrea_Cliente.Model
     public class Serializadora
     {
 
-        public string WsAdIvnd { get; set; } // web servic
+        public string WsAdIvnd { get; set; } // web service
 
         public void EscribirObjeto(string NombreArchivo) 
         {
