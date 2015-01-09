@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.625" name="IvendDB">
+  <DataContextMoniker Name="/IvendDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3ea551e5-2e40-49c6-a4a5-fc8f042502b5" absoluteBounds="0.625, 0.625, 2, 10.809064127604165">
+      <DataClassMoniker Name="/IvendDBDataContext/CusCustomer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8dd91454-3bef-41f4-8927-c340f406e1c5" absoluteBounds="0.64000000000000012, 1.085, 1.9700000000000002, 10.249064127604166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cffb566e-a452-411c-946f-6273eb6f5412" absoluteBounds="3.625, 3.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/IvendDBDataContext/CusCustomerGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="44371ee1-3c2b-42cd-b269-d85131402ebd" absoluteBounds="3.6399999999999997, 4.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 5.11620198567708); (3.625 : 5.11620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/IvendDBDataContext/CusCustomer/CusCustomer_CusCustomerGroup" />
+      <nodes>
+        <classShapeMoniker Id="3ea551e5-2e40-49c6-a4a5-fc8f042502b5" />
+        <classShapeMoniker Id="cffb566e-a452-411c-946f-6273eb6f5412" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
