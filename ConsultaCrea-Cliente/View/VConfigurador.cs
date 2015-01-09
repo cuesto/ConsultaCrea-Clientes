@@ -21,6 +21,10 @@ namespace ConsultaCrea_Cliente.View
             InitializeComponent();
             Model.Serializadora serializadora = Model.Serializadora.LeerObjeto("conf.bin");
             TBWsAddress.Text = serializadora.WsAdIvnd.ToString();
+            TBServer.Text = serializadora.SvrIvnd.ToString();
+            TBDatabase.Text = serializadora.DBIvnd.ToString();
+            TBUser.Text = serializadora.UsrIvnd.ToString();
+            TBPass.Text = serializadora.PassIvnd.ToString();
         }
 
         public static VConfigurador getInstancia
@@ -50,6 +54,10 @@ namespace ConsultaCrea_Cliente.View
         {
             Model.Serializadora serializadora = new Model.Serializadora();
             serializadora.WsAdIvnd = TBWsAddress.Text;
+            serializadora.SvrIvnd = TBServer.Text;
+            serializadora.DBIvnd = TBDatabase.Text;
+            serializadora.UsrIvnd = TBUser.Text;
+            serializadora.PassIvnd = TBPass.Text;
             serializadora.EscribirObjeto("conf.bin");
             this.Visible = false;
         }

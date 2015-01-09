@@ -12,6 +12,19 @@ namespace ConsultaCrea_Cliente.Model
     {
 
         public string WsAdIvnd { get; set; } // web service
+        public string SvrIvnd { get; set; } // server DB
+        public string DBIvnd { get; set; } // DB name
+        public string UsrIvnd { get; set; } // user DB
+        public string PassIvnd { get; set; } // pass DB
+
+        public Serializadora()
+        {
+            WsAdIvnd = "";
+            SvrIvnd = "";
+            DBIvnd = "";
+            UsrIvnd = "";
+            PassIvnd = "";
+        }
 
         public void EscribirObjeto(string NombreArchivo) 
         {
