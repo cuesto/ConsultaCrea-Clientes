@@ -8,6 +8,7 @@ namespace ConsultaCrea_Cliente.Model.Interfaces
 {
     interface IConsulta
     {
-        bool buscarCliente(string id);
+        string buscarCliente(string TaxNumber);
+
     }
 }

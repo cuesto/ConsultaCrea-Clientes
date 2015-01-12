@@ -25,11 +25,24 @@ namespace ConsultaCrea_Cliente
 
         private void btnBuscarRNC_Click(object sender, EventArgs e)
         {
-            ConsultarDGII();
-            ivend.buscarCliente(mTxtRNC.ToString());
+            TxtId.Text = "";
+            bool isResultado = ConsultarDGII();
+            string IdCliente = ivend.buscarCliente(mTxtRNC.Text.ToString());
+            if (isResultado && (IdCliente.Length > 0))
+            {
+                DialogResult isRespuesta = MessageBox.Show("Este cliente ya está en el sistema. Desea Actualizar sus Datos?", "Información", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification, false);
+                if (isRespuesta == System.Windows.Forms.DialogResult.Yes)
+                {
+                    groupBox2.Enabled = true;
+                    TxtId.Text = IdCliente;
+                }
+                else { groupBox2.Enabled = false; }
+            }
+            if (isResultado && (IdCliente.Length <= 0)) { groupBox2.Enabled = true; }
+            if (!isResultado) { groupBox2.Enabled = false; }
         }
 
-        private void ConsultarDGII()
+        private bool ConsultarDGII()
         {
             ResultRnc result = new ResultRnc();
             result = RncQueryWrapper.QueryByRnc(mTxtRNC.Text);
@@ -40,6 +53,7 @@ namespace ConsultaCrea_Cliente
                 txtCategoria.Text = result.Categoria;
                 txtRegimenDePago.Text = result.RegimenDePago;
                 txtEstado.Text = result.Estado;
+                return true;
             }
             else
             {
@@ -49,6 +63,7 @@ namespace ConsultaCrea_Cliente
                 txtRegimenDePago.Text = "";
                 txtEstado.Text = "";
                 MessageBox.Show("No existen resultados de esta búsqueda.");
+                return false;
             }
         }
 
@@ -67,7 +82,7 @@ namespace ConsultaCrea_Cliente
 
         private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View.VConfigurador.getInstancia.Visible= true;
+            View.VConfigurador.getInstancia.Visible = true;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

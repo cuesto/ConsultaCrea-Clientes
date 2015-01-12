@@ -23,21 +23,24 @@ namespace ConsultaCrea_Cliente.Model
             db = new datasource.IvendDBDataContext(ConnString);
         }
 
-        public void agregarCliente(string rnc, string nombre)
+        public void agregarCliente(string rnc, string nombre, string grupoCliente)
         {
             throw new NotImplementedException();
         }
 
-        public bool buscarCliente(string id)
+        public void agregarCliente(IvendAPI.Customer customer)
+        { }
+
+        public string buscarCliente(string TaxNumber)
         {
             var qCliente = from T0 in db.CusCustomers
-                           where T0.TaxNumber.Equals(id)
-                           select T0;
+                           where T0.TaxNumber.Trim().Equals(TaxNumber.Trim())
+                           select T0.Id;
             foreach (var q in qCliente)
             {
-                return true;
+                return q.ToString();
             }
-            return false;
+            return "";
         }
     }
 }
