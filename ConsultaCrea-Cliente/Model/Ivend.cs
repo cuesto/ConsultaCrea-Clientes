@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ConsultaCrea_Cliente.Model.datasource;
 using ConsultaCrea_Cliente.View;
-using ConsultaCrea_Cliente.Model.datasource;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace ConsultaCrea_Cliente.Model
 {
@@ -12,11 +10,12 @@ namespace ConsultaCrea_Cliente.Model
     {
         private string Address, ConnString;
         private IvendDBDataContext db;
+        private IvendAPI.IntegrationServiceClient client;
 
         public Ivend()
         {
             Address = VConfigurador.getInstancia.serializadora.WsAdIvnd.ToString(); //"http://localhost/iVendAPI/iVendAPI.svc";
-            IvendAPI.IntegrationServiceClient client = new IvendAPI.IntegrationServiceClient();
+            client = new IvendAPI.IntegrationServiceClient();
             client.Endpoint.Address = new System.ServiceModel.EndpointAddress(Address);
             ConnString = "Data Source="+VConfigurador.getInstancia.serializadora.SvrIvnd.ToString()+";Initial Catalog="+VConfigurador.getInstancia.serializadora.DBIvnd.ToString()+";Persist Security Info=True;User ID="+
                 VConfigurador.getInstancia.serializadora.UsrIvnd.ToString()+"; Password="+VConfigurador.getInstancia.serializadora.PassIvnd.ToString();
@@ -25,7 +24,7 @@ namespace ConsultaCrea_Cliente.Model
 
         public void agregarCliente(string rnc, string nombre, string grupoCliente)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void agregarCliente(IvendAPI.Customer customer)
@@ -36,11 +35,23 @@ namespace ConsultaCrea_Cliente.Model
             var qCliente = from T0 in db.CusCustomers
                            where T0.TaxNumber.Trim().Equals(TaxNumber.Trim())
                            select T0.Id;
+
             foreach (var q in qCliente)
             {
                 return q.ToString();
             }
             return "";
+        }
+
+        public System.Data.DataSet buscarGrupoCliente()
+        {
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("select Id, Description from cuscustomergroup", conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds); 
+            conn.Close();
+            return ds;
         }
     }
 }

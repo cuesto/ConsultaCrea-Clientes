@@ -50,7 +50,7 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CmbGrupos = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
@@ -258,7 +258,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.TxtId);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.CmbGrupos);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
@@ -270,13 +270,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ivend";
             // 
-            // comboBox1
+            // CmbGrupos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(110, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(152, 21);
-            this.comboBox1.TabIndex = 6;
+            this.CmbGrupos.FormattingEnabled = true;
+            this.CmbGrupos.Location = new System.Drawing.Point(110, 58);
+            this.CmbGrupos.Name = "CmbGrupos";
+            this.CmbGrupos.Size = new System.Drawing.Size(152, 21);
+            this.CmbGrupos.TabIndex = 6;
             // 
             // label7
             // 
@@ -357,7 +357,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbGrupos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource dataTableBindingSource;
         private System.Windows.Forms.TextBox TxtId;

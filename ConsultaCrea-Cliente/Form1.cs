@@ -21,6 +21,10 @@ namespace ConsultaCrea_Cliente
         {
             InitializeComponent();
             ivend = new Ivend();
+            /*Inicializa ComboBox*/
+            CmbGrupos.DataSource = ivend.buscarGrupoCliente().Tables[0];
+            CmbGrupos.DisplayMember = "Description";
+            CmbGrupos.ValueMember = "Id";
         }
 
         private void btnBuscarRNC_Click(object sender, EventArgs e)
