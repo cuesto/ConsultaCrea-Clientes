@@ -8,7 +8,7 @@ namespace ConsultaCrea_Cliente.Model.Interfaces
 {
     interface ICreaCliente
     {
-        void agregarCliente(string rnc, string nombre, string grupoCliente);
+        string agregarCliente(string rnc, string nombre, string grupoCliente);
         string modificarCliente(string id, string nombre, string grupoCliente);
     }
 }

@@ -1,5 +1,7 @@
-﻿using ConsultaCrea_Cliente.Model.datasource;
+﻿using ConsultaCrea_Cliente.IvendAPI;
+using ConsultaCrea_Cliente.Model.datasource;
 using ConsultaCrea_Cliente.View;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace ConsultaCrea_Cliente.Model
         private string Address, ConnString;
         private IvendDBDataContext db;
         private IvendAPI.IntegrationServiceClient client;
+        private static Random random = new Random((int)DateTime.Now.Ticks);
 
         public Ivend()
         {
@@ -22,9 +25,22 @@ namespace ConsultaCrea_Cliente.Model
             db = new datasource.IvendDBDataContext(ConnString);
         }
 
-        public void agregarCliente(string rnc, string nombre, string grupoCliente)
+        public string agregarCliente(string rnc, string nombre, string grupoCliente)
         {
-            
+            IvendAPI.Customer cust = new IvendAPI.Customer();
+            cust.Id = RandomString(8);
+            cust.TaxNumber = rnc;
+            if (cust.TaxNumber.ToString().Trim().Length == 9)
+            { cust.TaxCompanyType = CompanyType.Company; }
+            else if (cust.TaxNumber.ToString().Trim().Length == 11)
+            { cust.TaxCompanyType = CompanyType.Private; }
+            cust.FirstName = nombre;
+            cust.CustomerGroupId = grupoCliente;
+            cust.IsActive = true;
+            cust.CanOrderItems = true;
+            IvendAPI.Customer rs = new IvendAPI.Customer();
+            rs = client.SaveCustomer(cust);
+            return rs.Message;
         }
 
         public string modificarCliente(string id, string nombre, string grupoCliente)
@@ -34,8 +50,7 @@ namespace ConsultaCrea_Cliente.Model
             cust.CustomerGroupId = grupoCliente;
             IvendAPI.Customer rs = new IvendAPI.Customer();
             rs = client.SaveCustomer(cust);
-            string err = rs.Message;
-            return err;
+            return rs.Message;
         }
 
         public string buscarCliente(string TaxNumber)
@@ -60,6 +75,14 @@ namespace ConsultaCrea_Cliente.Model
             da.Fill(ds); 
             conn.Close();
             return ds;
+        }
+
+        private string RandomString(int Size)
+        {
+            string input = "abcdefghijklmnopqrstuvwxyz0123456789";
+            var chars = Enumerable.Range(0, Size)
+                                   .Select(x => input[random.Next(0, input.Length)]);
+            return new string(chars.ToArray());
         }
     }
 }
