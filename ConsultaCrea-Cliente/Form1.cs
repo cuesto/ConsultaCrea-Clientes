@@ -81,7 +81,16 @@ namespace ConsultaCrea_Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // boton para agregar datos a Ivend
+            if (TxtId.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                string msg = ivend.modificarCliente(TxtId.Text, txtNombre.Text, CmbGrupos.SelectedValue.ToString()).Trim();
+                if (msg != "Success") { MessageBox.Show(msg); }
+                else { MessageBox.Show("Se modificó el cliente correctamente."); }
+            }
         }
 
         private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)

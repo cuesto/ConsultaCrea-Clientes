@@ -27,8 +27,16 @@ namespace ConsultaCrea_Cliente.Model
             
         }
 
-        public void agregarCliente(IvendAPI.Customer customer)
-        { }
+        public string modificarCliente(string id, string nombre, string grupoCliente)
+        {
+            IvendAPI.Customer cust = client.GetCustomer(id);
+            cust.FirstName = nombre;
+            cust.CustomerGroupId = grupoCliente;
+            IvendAPI.Customer rs = new IvendAPI.Customer();
+            rs = client.SaveCustomer(cust);
+            string err = rs.Message;
+            return err;
+        }
 
         public string buscarCliente(string TaxNumber)
         {
@@ -47,7 +55,7 @@ namespace ConsultaCrea_Cliente.Model
         {
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            SqlDataAdapter da = new SqlDataAdapter("select Id, Description from cuscustomergroup", conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT Id, Description FROM cuscustomergroup", conn);
             DataSet ds = new DataSet();
             da.Fill(ds); 
             conn.Close();
