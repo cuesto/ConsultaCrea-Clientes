@@ -17,6 +17,7 @@ namespace ConsultaCrea_Cliente
         public Form1()
         {
             InitializeComponent();
+            Ivend ivend = new Ivend();
         }
 
         private void btnBuscarRNC_Click(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace ConsultaCrea_Cliente
         private void button1_Click(object sender, EventArgs e)
         {
             ConsultarDGII();
-            Ivend ivend = new Ivend();
+            
         }
 
         private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)

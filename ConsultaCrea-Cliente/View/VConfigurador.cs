@@ -9,17 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using ConsultaCrea_Cliente.Model;
 
 namespace ConsultaCrea_Cliente.View
 {
     public partial class VConfigurador : Form, ISerializable
     {
         private static VConfigurador Instancia;
+        public Serializadora serializadora;
 
         private VConfigurador()
         {
             InitializeComponent();
-            Model.Serializadora serializadora = Model.Serializadora.LeerObjeto("conf.bin");
+            serializadora = Model.Serializadora.LeerObjeto("conf.bin");
             TBWsAddress.Text = serializadora.WsAdIvnd.ToString();
             TBServer.Text = serializadora.SvrIvnd.ToString();
             TBDatabase.Text = serializadora.DBIvnd.ToString();
@@ -52,7 +54,7 @@ namespace ConsultaCrea_Cliente.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Model.Serializadora serializadora = new Model.Serializadora();
+            serializadora = new Model.Serializadora();
             serializadora.WsAdIvnd = TBWsAddress.Text;
             serializadora.SvrIvnd = TBServer.Text;
             serializadora.DBIvnd = TBDatabase.Text;
