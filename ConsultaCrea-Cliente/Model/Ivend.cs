@@ -10,17 +10,17 @@ namespace ConsultaCrea_Cliente.Model
 {
     class Ivend : Model.Interfaces.ICreaCliente, Model.Interfaces.IConsulta
     {
-        private string address, connString;
+        private string Address, ConnString;
+        private IvendDBDataContext db;
 
-        public Ivend() { }
-        public Ivend(string serverAddress)
+        public Ivend()
         {
-            address = VConfigurador.getInstancia.serializadora.WsAdIvnd.ToString(); //"http://localhost/iVendAPI/iVendAPI.svc";
+            Address = VConfigurador.getInstancia.serializadora.WsAdIvnd.ToString(); //"http://localhost/iVendAPI/iVendAPI.svc";
             IvendAPI.IntegrationServiceClient client = new IvendAPI.IntegrationServiceClient();
-            client.Endpoint.Address = new System.ServiceModel.EndpointAddress(serverAddress);
-            connString = "Data Source="+VConfigurador.getInstancia.serializadora.SvrIvnd.ToString()+";Initial Catalog="+VConfigurador.getInstancia.serializadora.DBIvnd.ToString()+";Persist Security Info=True;User ID="+
+            client.Endpoint.Address = new System.ServiceModel.EndpointAddress(Address);
+            ConnString = "Data Source="+VConfigurador.getInstancia.serializadora.SvrIvnd.ToString()+";Initial Catalog="+VConfigurador.getInstancia.serializadora.DBIvnd.ToString()+";Persist Security Info=True;User ID="+
                 VConfigurador.getInstancia.serializadora.UsrIvnd.ToString()+"; Password="+VConfigurador.getInstancia.serializadora.PassIvnd.ToString();
-            IvendDBDataContext db = new datasource.IvendDBDataContext(connString);
+            db = new datasource.IvendDBDataContext(ConnString);
         }
 
         public void agregarCliente(string rnc, string nombre)
@@ -30,7 +30,14 @@ namespace ConsultaCrea_Cliente.Model
 
         public bool buscarCliente(string id)
         {
-            throw new NotImplementedException();
+            var qCliente = from T0 in db.CusCustomers
+                           where T0.TaxNumber.Equals(id)
+                           select T0;
+            foreach (var q in qCliente)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

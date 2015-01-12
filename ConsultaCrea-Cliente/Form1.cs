@@ -14,15 +14,19 @@ namespace ConsultaCrea_Cliente
 {
     public partial class Form1 : Form
     {
+
+        private Ivend ivend;
+
         public Form1()
         {
             InitializeComponent();
-            Ivend ivend = new Ivend();
+            ivend = new Ivend();
         }
 
         private void btnBuscarRNC_Click(object sender, EventArgs e)
         {
             ConsultarDGII();
+            ivend.buscarCliente(mTxtRNC.ToString());
         }
 
         private void ConsultarDGII()
@@ -52,14 +56,13 @@ namespace ConsultaCrea_Cliente
         {
             //if (e.KeyValue ==  )
             //{
-            //  //  ConsultarDGII();
+            ////  //  ConsultarDGII();
             //}
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ConsultarDGII();
-            
+            // boton para agregar datos a Ivend
         }
 
         private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)
