@@ -30,24 +30,24 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.TBWsAddress = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TBPass = new System.Windows.Forms.TextBox();
+            this.TBUser = new System.Windows.Forms.TextBox();
+            this.TBDatabase = new System.Windows.Forms.TextBox();
+            this.TBServer = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TBServer = new System.Windows.Forms.TextBox();
-            this.TBDatabase = new System.Windows.Forms.TextBox();
-            this.TBUser = new System.Windows.Forms.TextBox();
-            this.TBPass = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TBWsAddress = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,41 +71,78 @@
             this.tabPage1.Text = "Ivend";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // TBWsAddress
+            // groupBox2
             // 
-            this.TBWsAddress.Location = new System.Drawing.Point(122, 26);
-            this.TBWsAddress.Name = "TBWsAddress";
-            this.TBWsAddress.Size = new System.Drawing.Size(415, 20);
-            this.TBWsAddress.TabIndex = 1;
+            this.groupBox2.Controls.Add(this.TBPass);
+            this.groupBox2.Controls.Add(this.TBUser);
+            this.groupBox2.Controls.Add(this.TBDatabase);
+            this.groupBox2.Controls.Add(this.TBServer);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(6, 82);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(546, 156);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Database";
             // 
-            // label1
+            // TBPass
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Web Service Address";
+            this.TBPass.Location = new System.Drawing.Point(122, 118);
+            this.TBPass.Name = "TBPass";
+            this.TBPass.PasswordChar = '*';
+            this.TBPass.Size = new System.Drawing.Size(166, 20);
+            this.TBPass.TabIndex = 5;
             // 
-            // button2
+            // TBUser
             // 
-            this.button2.Location = new System.Drawing.Point(503, 288);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.TBUser.Location = new System.Drawing.Point(122, 83);
+            this.TBUser.Name = "TBUser";
+            this.TBUser.Size = new System.Drawing.Size(166, 20);
+            this.TBUser.TabIndex = 4;
             // 
-            // button1
+            // TBDatabase
             // 
-            this.button1.Location = new System.Drawing.Point(422, 288);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TBDatabase.Location = new System.Drawing.Point(122, 48);
+            this.TBDatabase.Name = "TBDatabase";
+            this.TBDatabase.Size = new System.Drawing.Size(166, 20);
+            this.TBDatabase.TabIndex = 3;
+            // 
+            // TBServer
+            // 
+            this.TBServer.Location = new System.Drawing.Point(122, 13);
+            this.TBServer.Name = "TBServer";
+            this.TBServer.Size = new System.Drawing.Size(166, 20);
+            this.TBServer.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(63, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(87, 86);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "User";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(63, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Database";
             // 
             // label2
             // 
@@ -127,78 +164,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Web Services";
             // 
-            // groupBox2
+            // label1
             // 
-            this.groupBox2.Controls.Add(this.TBPass);
-            this.groupBox2.Controls.Add(this.TBUser);
-            this.groupBox2.Controls.Add(this.TBDatabase);
-            this.groupBox2.Controls.Add(this.TBServer);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(6, 82);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(546, 156);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Database";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Web Service Address";
             // 
-            // label3
+            // TBWsAddress
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Database";
+            this.TBWsAddress.Location = new System.Drawing.Point(122, 26);
+            this.TBWsAddress.Name = "TBWsAddress";
+            this.TBWsAddress.Size = new System.Drawing.Size(415, 20);
+            this.TBWsAddress.TabIndex = 1;
             // 
-            // label4
+            // button2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "User";
+            this.button2.Location = new System.Drawing.Point(503, 288);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label5
+            // button1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Password";
-            // 
-            // TBServer
-            // 
-            this.TBServer.Location = new System.Drawing.Point(122, 13);
-            this.TBServer.Name = "TBServer";
-            this.TBServer.Size = new System.Drawing.Size(166, 20);
-            this.TBServer.TabIndex = 3;
-            // 
-            // TBDatabase
-            // 
-            this.TBDatabase.Location = new System.Drawing.Point(122, 48);
-            this.TBDatabase.Name = "TBDatabase";
-            this.TBDatabase.Size = new System.Drawing.Size(166, 20);
-            this.TBDatabase.TabIndex = 3;
-            // 
-            // TBUser
-            // 
-            this.TBUser.Location = new System.Drawing.Point(122, 83);
-            this.TBUser.Name = "TBUser";
-            this.TBUser.Size = new System.Drawing.Size(166, 20);
-            this.TBUser.TabIndex = 3;
-            // 
-            // TBPass
-            // 
-            this.TBPass.Location = new System.Drawing.Point(122, 118);
-            this.TBPass.Name = "TBPass";
-            this.TBPass.PasswordChar = '*';
-            this.TBPass.Size = new System.Drawing.Size(166, 20);
-            this.TBPass.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(422, 288);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // VConfigurador
             // 
@@ -212,14 +212,14 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Name = "VConfigurador";
-            this.Text = "VConfigurador";
+            this.Text = "Configuración";
             this.TopMost = true;
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -50,11 +50,11 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TxtId = new System.Windows.Forms.TextBox();
             this.CmbGrupos = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.TxtId = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -270,6 +270,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ivend";
             // 
+            // TxtId
+            // 
+            this.TxtId.Enabled = false;
+            this.TxtId.Location = new System.Drawing.Point(110, 25);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(100, 20);
+            this.TxtId.TabIndex = 7;
+            // 
             // CmbGrupos
             // 
             this.CmbGrupos.FormattingEnabled = true;
@@ -277,6 +285,16 @@
             this.CmbGrupos.Name = "CmbGrupos";
             this.CmbGrupos.Size = new System.Drawing.Size(152, 21);
             this.CmbGrupos.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(52, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Id Cliente";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label7
             // 
@@ -291,24 +309,6 @@
             // dataTableBindingSource
             // 
             this.dataTableBindingSource.DataSource = typeof(System.Data.DataTable);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(52, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Id Cliente";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // TxtId
-            // 
-            this.TxtId.Enabled = false;
-            this.TxtId.Location = new System.Drawing.Point(110, 25);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(100, 20);
-            this.TxtId.TabIndex = 7;
             // 
             // Form1
             // 

@@ -28,7 +28,7 @@ namespace ConsultaCrea_Cliente.Model
         public string agregarCliente(string rnc, string nombre, string grupoCliente)
         {
             IvendAPI.Customer cust = new IvendAPI.Customer();
-            cust.Id = RandomString(8);
+            cust.Id = RandomString(9);
             cust.TaxNumber = rnc;
             if (cust.TaxNumber.ToString().Trim().Length == 9)
             { cust.TaxCompanyType = CompanyType.Company; }
