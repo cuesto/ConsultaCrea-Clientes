@@ -20,11 +20,15 @@ namespace ConsultaCrea_Cliente
         public Form1()
         {
             InitializeComponent();
-            ivend = new Ivend();
-            /*Inicializa ComboBox*/
-            CmbGrupos.DataSource = ivend.buscarGrupoCliente().Tables[0];
-            CmbGrupos.DisplayMember = "Description";
-            CmbGrupos.ValueMember = "Id";
+            try
+            {
+                ivend = new Ivend();
+                /*Inicializa ComboBox*/
+                CmbGrupos.DataSource = ivend.buscarGrupoCliente().Tables[0];
+                CmbGrupos.DisplayMember = "Description";
+                CmbGrupos.ValueMember = "Id";
+            }
+            catch (Exception e) { }
         }
 
         private void btnBuscarRNC_Click(object sender, EventArgs e)

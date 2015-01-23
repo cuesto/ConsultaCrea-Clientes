@@ -55,25 +55,35 @@ namespace ConsultaCrea_Cliente.Model
 
         public string buscarCliente(string TaxNumber)
         {
-            var qCliente = from T0 in db.CusCustomers
-                           where T0.TaxNumber.Trim().Equals(TaxNumber.Trim())
-                           select T0.Id;
-
-            foreach (var q in qCliente)
+            try
             {
-                return q.ToString();
+                var qCliente = from T0 in db.CusCustomers
+                               where T0.TaxNumber.Trim().Equals(TaxNumber.Trim())
+                               select T0.Id;
+
+                foreach (var q in qCliente)
+                {
+                    return q.ToString();
+                }
             }
+            catch (Exception e) { }
             return "";
         }
 
         public System.Data.DataSet buscarGrupoCliente()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT Id, Description FROM cuscustomergroup", conn);
             DataSet ds = new DataSet();
-            da.Fill(ds); 
-            conn.Close();
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConnString);
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT Id, Description FROM cuscustomergroup", conn);
+                da.Fill(ds);
+                conn.Close();
+            }catch(Exception e)
+            {
+
+            }
             return ds;
         }
 
